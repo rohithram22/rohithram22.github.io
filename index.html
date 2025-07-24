@@ -73,35 +73,6 @@
             margin-bottom: 3rem;
         }
 
-        .profile-photo-placeholder {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background-color: var(--card-bg);
-            border: 3px solid var(--accent-color);
-            margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            color: var(--accent-color);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .profile-photo-placeholder:hover {
-            transform: scale(1.05);
-            border-color: var(--link-color);
-        }
-
-        .name {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-
         .profile-photo {
             width: 150px;
             height: 150px;
@@ -110,8 +81,22 @@
             border: 3px solid var(--accent-color);
             margin: 0 auto 2rem;
             display: block;
-            object-fit: cover;  /* This ensures the image fits properly in the circle */
+            object-fit: cover;
             transition: all 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+            border-color: var(--link-color);
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
         }
 
         .tagline {
@@ -147,34 +132,27 @@
         .links-section {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             margin-top: 2rem;
         }
 
         .link-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background-color: var(--accent-color);
-            color: white;
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            color: var(--accent-color);
             text-decoration: none;
-            border-radius: 5px;
+            border: 2px solid var(--accent-color);
+            border-radius: 25px;
             transition: all 0.3s ease;
             font-weight: 500;
+            background-color: transparent;
         }
 
         .link-button:hover {
-            background-color: var(--link-hover);
+            background-color: var(--accent-color);
+            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px var(--shadow);
-        }
-
-        .link-button svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
         }
 
         @media (max-width: 768px) {
@@ -197,7 +175,7 @@
             }
             
             .link-button {
-                justify-content: center;
+                text-align: center;
             }
         }
 
@@ -237,39 +215,36 @@
         <div class="profile-section">
             <img src="profilepic.jpg" alt="Rohith Chandra Kandambeth" class="profile-photo">
             <h1 class="name">Rohith Chandra Kandambeth</h1>
-            <p class="tagline">Data Scientist | Machine Learning Engineer</p>
+            <p class="tagline">Data Scientist | Machine Learning Engineer | AI Engineer</p>
         </div>
 
         <div class="about-section">
             <h2 class="about-heading">About me in a nutshell</h2>
             <p class="about-content">
-                I am a passionate Data Scientist and Machine Learning Engineer with a strong background in developing innovative AI solutions and implementing production-ready ML systems. Currently pursuing my Master's in Computer Science at Northeastern University, I bring hands-on experience from Tesla's Reliability Engineering team, where I optimized predictive maintenance algorithms and built scalable data pipelines. My expertise spans from deep learning and computer vision to MLOps and distributed computing, with a proven track record of improving model performance and system efficiency. I'm driven by the challenge of transforming complex data into actionable insights and building intelligent systems that make a real-world impact.
-            </p>
+    Hi there! I’m a recent Computer Science graduate from Northeastern University with a passion for data and AI. As a Data Scientist and Machine Learning Engineer, I love building intelligent systems that don’t just work—they wow. Whether I’m fine-tuning Large Language Models (LLMs) for domain-specific tasks or designing NLP pipelines that cut through noisy text, I focus on crafting solutions that are both powerful and practical.<br><br>
+
+    I love rolling up my sleeves to solve messy, real-world problems — from enhancing algorithms and building dashboards at Tesla to developing RAG systems, summarizers, and sentiment analyzers using transformers, BERT, and LangChain. My expertise spans deep learning, computer vision, MLOps, and all things NLP—especially generative AI, embeddings, and deploying LLMs in real-world applications.<br><br>
+
+    If it speaks, reads, or thinks, I’ve probably built it (or broken it on purpose to learn how it works).<br><br>
+
+    When I’m not building models or wrestling with data pipelines, you’ll find me diving into thought-provoking podcasts, getting lost in everything from fiction to nonfiction, swimming laps to reset my brain, or cheering way too loudly during Formula 1 race weekends.
+</p>
         </div>
 
         <div class="links-section">
             <a href="resume.pdf" class="link-button" target="_blank">
-                <svg viewBox="0 0 24 24">
-                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M13,17V13H10L14,9L18,13H15V17H13Z"/>
-                </svg>
                 Resume
             </a>
             
             <a href="projects.html" class="link-button">
-                <svg viewBox="0 0 24 24">
-                    <path d="M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M7,7H17V5H19V19H5V5H7V7M12,13H7V11H12M17,17H7V15H17V17Z"/>
-                </svg>
-                Projects & Experience
+                Education & Experience
             </a>
-            
             
             <a href="contact.html" class="link-button">
-                <svg viewBox="0 0 24 24">
-                    <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
-                </svg>
-                Contact Me
+                Contact
             </a>
         </div>
+        
     </div>
 
     <script>

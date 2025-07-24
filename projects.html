@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects & Experience - Rohith Chandra Kandambeth</title>
+    <title>Education & Experience - Rohith Chandra Kandambeth</title>
     <style>
         :root {
             --bg-color: #ffffff;
@@ -66,27 +66,35 @@
         }
 
         .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 1rem;
-            background-color: var(--accent-color);
-            color: white;
+            background: var(--card-bg);
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             transition: all 0.3s ease;
-            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px var(--shadow);
+            font-weight: 500;
         }
 
         .back-button:hover {
-            background-color: var(--link-hover);
-            transform: translateX(-5px);
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px var(--shadow);
         }
 
         h1 {
             font-size: 2.5rem;
             color: var(--accent-color);
             margin-bottom: 3rem;
+            margin-top: 5rem;
             text-align: center;
         }
 
@@ -183,6 +191,52 @@
             font-size: 0.85rem;
         }
 
+        .courses {
+            margin-top: 1rem;
+            font-style: italic;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        .github-section {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .github-section h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .github-section p {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .github-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .github-button:hover {
+            background-color: var(--link-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px var(--shadow);
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -190,11 +244,19 @@
             
             h1 {
                 font-size: 2rem;
+                margin-top: 6rem;
             }
             
             .theme-toggle {
                 top: 1rem;
                 right: 1rem;
+            }
+
+            .back-button {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
             }
             
             .item-header {
@@ -205,16 +267,48 @@
     </style>
 </head>
 <body>
+    <a href="index.html" class="back-button">
+        ← Home
+    </a>
+    
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
         <span id="theme-icon">🌙</span>
     </button>
 
     <div class="container">
-        <a href="index.html" class="back-button">
-            ← Back to Home
-        </a>
+        <h1>Education & Experience</h1>
 
-        <h1>Projects & Experience</h1>
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">Northeastern University</h3>
+                        <p class="item-subtitle">Master of Science in Computer Science</p>
+                    </div>
+                    <span class="item-date">2025</span>
+                </div>
+                <div class="item-description">
+                    <p>Completed my Master's degree with a focus on machine learning and artificial intelligence. My coursework has provided me with advanced knowledge in both theoretical foundations and practical applications of modern computing.</p>
+                    <p class="courses"><strong>Key Courses:</strong> Natural Language Processing, Machine Learning, Information Retrieval, Programming Design Paradigm, Algorithms, Database Management Systems</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">PSG College of Technology</h3>
+                        <p class="item-subtitle">Bachelor of Engineering in Computer Science and Engineering</p>
+                    </div>
+                    <span class="item-date">2018 - 2022</span>
+                </div>
+                <div class="item-description">
+                    <p>Completed my undergraduate degree with a strong foundation in computer science fundamentals and software engineering principles. Actively participated in research projects and innovation labs, leading to a published paper on deep learning applications in healthcare.</p>
+                    <p class="courses"><strong>Key Courses:</strong> Data Structures and Algorithms, Object-Oriented Programming, Computer Networks, Operating Systems, Artificial Intelligence, Deep Learning, Data Analytics, Software Engineering</p>
+                </div>
+            </div>
+        </div>
 
         <div class="section">
             <h2 class="section-title">Professional Experience</h2>
@@ -228,7 +322,7 @@
                     <span class="item-date">Aug 2024 – Dec 2024</span>
                 </div>
                 <div class="item-description">
-                    <p>During my time at Tesla, I worked on optimizing critical reliability engineering systems. I enhanced the fatigue analysis algorithm by implementing parallel processing techniques using multiprocessing and multithreading in Python, which eliminated Rainflow cycle counting bottlenecks and achieved a 20-25% improvement in processing speed for large-scale sensor data. I also developed comprehensive analytics solutions using Python libraries like pandas, numpy, and scikit-learn to create statistical analyses and interactive dashboards that visualized vehicle telemetry patterns, enabling more accurate failure prediction and optimized maintenance scheduling. Additionally, I engineered a robust data pipeline leveraging Apache Spark for distributed processing of terabytes of sensor data and Apache Airflow for ETL workflows, which supported real-time reliability metrics calculation. My work on implementing machine learning models for vehicle reliability, including time-series forecasting, anomaly detection, and survival analysis, resulted in a 30% improvement in maintenance prediction accuracy and significantly reduced unplanned downtime.</p>
+                    <p>At Tesla, I optimized critical reliability engineering systems by accelerating the Rainflow fatigue analysis algorithm with Python-based multiprocessing and multithreading, boosting processing speed by 20–25%. I built analytics solutions using pandas, NumPy, and scikit-learn to visualize vehicle telemetry and predict failures more accurately. Additionally, I engineered a scalable data pipeline with Apache Spark and Airflow to process terabytes of sensor data and enable real-time reliability metrics.</p>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-tag">Python</span>
@@ -247,7 +341,7 @@
                     <span class="item-date">Jan 2024 – Apr 2025</span>
                 </div>
                 <div class="item-description">
-                    <p>As a Teaching Assistant at Northeastern University, I've had the privilege of mentoring over 100 students through their machine learning journey. I guide students through complete ML pipelines, from exploratory data analysis and data preprocessing to advanced feature engineering techniques including scaling, encoding, and PCA. My hands-on support covers a wide range of supervised learning algorithms such as KNN, SVM, various regression techniques, decision trees, and Random Forest, as well as clustering methods like K-Means. I help students achieve 80-90% model accuracies through systematic debugging and optimization strategies. I also facilitate practical learning by assisting with Jupyter notebook exercises that cover critical concepts like cross-validation, hyperparameter tuning, and evaluation metrics including ROC-AUC and precision-recall curves. To improve the overall TA operations, I coordinate with 5 fellow TAs to implement efficient grading workflows and structured office hours, which has improved student support by 30% while maintaining consistent feedback quality.</p>
+                    <p>As a Teaching Assistant at Northeastern University, I’ve mentored 100+ students through end-to-end ML pipelines, covering EDA, preprocessing, feature engineering, and core algorithms like KNN, SVM, regression, and clustering. I support hands-on learning with Jupyter notebooks, guiding students on cross-validation, hyperparameter tuning, and model evaluation (ROC-AUC, PR curves), helping them achieve 80–90% accuracy. I also coordinate with 5 TAs to streamline grading and office hours, improving support efficiency by 30%.</p>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-tag">Teaching</span>
@@ -265,7 +359,7 @@
                     <span class="item-date">May 2021 – Jul 2021</span>
                 </div>
                 <div class="item-description">
-                    <p>At Skematix Technologies, I worked on a critical public health analytics project focused on COVID-19 vaccination data. I analyzed over 100,000 COWIN vaccination records using exploratory data analysis and clustering techniques including K-means and DBSCAN to identify regional disparities in vaccine adoption patterns. This analysis provided actionable insights for targeted public health interventions. I built a Random Forest model that predicted vaccination hesitancy based on socioeconomic features such as income, education, and demographics, achieving 85% accuracy with an AUC score of 0.89, which enabled data-driven resource allocation and outreach strategies. To support continuous monitoring, I automated the data pipeline using Python, SQL, and the COWIN API with CI/CD integration through Jenkins and GitHub Actions, reducing manual processing by 40% and ensuring real-time data freshness. I also developed an interactive web dashboard using JavaScript with an SQLite backend and embedded Tableau visualizations to display vaccination KPIs, regional trends, and predictive insights, significantly improving public health transparency and decision-making speed.</p>
+                    <p>At Skematix Technologies, I led COVID-19 vaccination data analysis on 100K+ COWIN records, using EDA and clustering (K-Means, DBSCAN) to uncover regional disparities. I built a Random Forest model (85% accuracy, AUC 0.89) to predict vaccine hesitancy based on socioeconomic features. I automated pipelines with Python, SQL, COWIN API, Jenkins, and GitHub Actions, cutting manual effort by 40%. I also developed an interactive dashboard with JavaScript, SQLite, and Tableau to visualize KPIs and drive public health decisions.</p>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-tag">Python</span>
@@ -285,7 +379,8 @@
                     <span class="item-date">Jan 2021 – Jul 2022</span>
                 </div>
                 <div class="item-description">
-                    <p>My work at PSG Tech's Innovation Practices Lab focused on applying deep learning to medical imaging for diabetic retinopathy detection. I co-authored a peer-reviewed research paper titled "Image Classification Using CNN to Diagnose Diabetic Retinopathy" which was published in Springer Nature's Congress on Intelligent Systems (2022). Our model achieved 91% training accuracy and 86% weighted F1-score, outperforming 7 existing state-of-the-art models by up to 40.5%. I developed a ResNet50-based deep learning model for automated diabetic retinopathy detection that could process thousands of fundus images per minute with 88% precision and 86% recall across 5 severity classes (No DR, Mild, Moderate, Severe, and Proliferative). Through comprehensive hyperparameter optimization using grid search across 12 parameter combinations including dropout rates, optimizers, and learning rates, I improved the model performance from an initial 22.6% to 91% accuracy. The final model achieved AUC scores greater than 0.9 for all classification categories and 80% validation accuracy through advanced data augmentation techniques including rescaling, random rotation, and random zoom.</p>
+                    <p>At PSG Tech’s Innovation Practices Lab, I developed a ResNet50-based deep learning model for diabetic retinopathy detection, achieving 91% accuracy and an 86% weighted F1-score—outperforming 7 state-of-the-art models by up to 40.5%. Our work, published in Springer Nature’s Congress on Intelligent Systems (2022), classified 5 severity levels with AUC > 0.9 using advanced augmentation and grid search across 12 hyperparameter sets. The model processed thousands of fundus images per minute with 88% precision and 86% recall.</p>
+                    <a href="https://link.springer.com/chapter/10.1007/978-981-16-9113-3_60" class="project-link" target="_blank">View Published Paper →</a>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-tag">Deep Learning</span>
@@ -352,6 +447,17 @@
                     <span class="tech-tag">CI/CD</span>
                 </div>
             </div>
+        </div>
+
+        <div class="github-section">
+            <h3>Learn more about the projects and check out other projects I did</h3>
+            <p>Explore my GitHub repository to see the code behind these projects and discover additional work in machine learning, deep learning, and software engineering.</p>
+            <a href="https://github.com/rohithram22" target="_blank" class="github-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"/>
+                </svg>
+                Visit My GitHub
+            </a>
         </div>
     </div>
 

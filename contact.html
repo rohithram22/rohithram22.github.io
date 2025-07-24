@@ -43,10 +43,11 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
             padding: 2rem;
             width: 100%;
+            text-align: center;
         }
 
         .theme-toggle {
@@ -61,6 +62,7 @@
             font-size: 1.2rem;
             transition: all 0.3s ease;
             box-shadow: 0 2px 5px var(--shadow);
+            z-index: 100;
         }
 
         .theme-toggle:hover {
@@ -69,131 +71,202 @@
         }
 
         .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 1rem;
-            background-color: var(--accent-color);
-            color: white;
+            background: var(--card-bg);
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             transition: all 0.3s ease;
-            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px var(--shadow);
+            font-weight: 500;
         }
 
         .back-button:hover {
-            background-color: var(--link-hover);
-            transform: translateX(-5px);
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px var(--shadow);
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--accent-color);
-            margin-bottom: 3rem;
-            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: bold;
         }
 
-        .contact-card {
-            background-color: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px var(--shadow);
-            text-align: center;
+        .email-section {
+            margin: 3rem 0;
+            padding: 0 1rem;
         }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            align-items: center;
-            margin-top: 2rem;
-        }
-
-        .contact-item {
+        .email-text {
             font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            line-height: 1.8;
         }
 
-        .contact-link {
+        .email-link {
             color: var(--link-color);
             text-decoration: none;
+            font-weight: 500;
             transition: color 0.3s ease;
         }
 
-        .contact-link:hover {
+        .email-link:hover {
             color: var(--link-hover);
             text-decoration: underline;
         }
 
-        .availability {
-            margin-top: 2.5rem;
-            font-size: 1.1rem;
-            color: var(--accent-color);
-            font-weight: 600;
+        .social-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .social-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+
+        .social-button.linkedin {
+            background-color: #0077b5;
+        }
+
+        .social-button.linkedin:hover {
+            background-color: #005885;
+        }
+
+        .social-button.github {
+            background-color: #333;
+        }
+
+        .social-button.github:hover {
+            background-color: #000;
+        }
+
+        .social-button svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .location {
+            margin-top: 3rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-size: 1rem;
         }
 
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
+                margin-top: 4rem;
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
-            
-            .contact-card {
-                padding: 2rem 1.5rem;
+
+            .theme-toggle {
+                top: 1rem;
+                right: 1rem;
             }
-            
-            .contact-item {
+
+            .back-button {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .social-buttons {
                 flex-direction: column;
-                text-align: center;
+                align-items: center;
             }
-            
-            .contact-label {
-                text-align: center;
+
+            .social-button {
+                width: 200px;
+                justify-content: center;
             }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .email-section, .social-buttons, .location {
+            animation: fadeIn 0.6s ease-out;
         }
     </style>
 </head>
 <body>
+    <a href="index.html" class="back-button">
+        ← Home
+    </a>
+
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
         <span id="theme-icon">🌙</span>
     </button>
 
     <div class="container">
-        <a href="index.html" class="back-button">
-            ← Back to Home
-        </a>
-
-        <h1>Contact Me</h1>
-
-        <div class="contact-card">
-            <div class="contact-info">
-                <div class="contact-item">
-                    📧 <a href="mailto:kandambeth.r@northeastern.edu" class="contact-link">kandambeth.r@northeastern.edu</a>
-                </div>
-                
-                <div class="contact-item">
-                    📱 <a href="tel:+18572302183" class="contact-link">(857) 230-2183</a>
-                </div>
-                
-                <div class="contact-item">
-                    💼 <a href="https://linkedin.com/in/rohith-kandambeth" target="_blank" class="contact-link">LinkedIn</a>
-                </div>
-                
-                <div class="contact-item">
-                    💻 <a href="https://github.com/rohithram22" target="_blank" class="contact-link">GitHub</a>
-                </div>
-                
-                <div class="contact-item">
-                    📍 US - Open to relocation
-                </div>
-            </div>
-
-            <div class="availability">
-                Available to start by Jul/Aug 2025
-            </div>
+        <h1>Get In Touch</h1>
+        
+        <div class="email-section">
+            <p class="email-text">
+                I'm always excited to connect with fellow tech enthusiasts, collaborate on interesting projects, or discuss opportunities in data science and machine learning. Feel free to reach out at 
+                <a href="mailto:kandambeth.r@northeastern.edu" class="email-link">kandambeth.r@northeastern.edu</a>
+            </p>
         </div>
+
+        <div class="social-buttons">
+            <a href="https://linkedin.com/in/rohith-kandambeth" target="_blank" class="social-button linkedin">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+                </svg>
+                LinkedIn
+            </a>
+            
+            <a href="https://github.com/rohithram22" target="_blank" class="social-button github">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"/>
+                </svg>
+                GitHub
+            </a>
+        </div>
+
+
     </div>
 
     <script>
