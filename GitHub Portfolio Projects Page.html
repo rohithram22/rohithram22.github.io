@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Experience - Rohith Chandra Kandambeth</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #2c3e50;
+            --link-color: #3498db;
+            --link-hover: #2980b9;
+            --card-bg: #f8f9fa;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --accent-color: #4a5f7a;
+            --link-color: #5dade2;
+            --link-hover: #85c1e9;
+            --card-bg: #2d2d2d;
+            --shadow: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--card-bg);
+            border: 2px solid var(--accent-color);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px var(--shadow);
+            z-index: 100;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px var(--shadow);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background-color: var(--link-hover);
+            transform: translateX(-5px);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .item {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px var(--shadow);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px var(--shadow);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .item-title {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .item-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .item-date {
+            color: var(--text-color);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .item-description {
+            margin-top: 1rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .item-description p {
+            margin-bottom: 1rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+
+        .tech-stack {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .theme-toggle {
+                top: 1rem;
+                right: 1rem;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span id="theme-icon">🌙</span>
+    </button>
+
+    <div class="container">
+        <a href="index.html" class="back-button">
+            ← Back to Home
+        </a>
+
+        <h1>Projects & Experience</h1>
+
+        <div class="section">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">Tesla Inc</h3>
+                        <p class="item-subtitle">Data Scientist, Reliability Engineering</p>
+                    </div>
+                    <span class="item-date">Aug 2024 – Dec 2024</span>
+                </div>
+                <div class="item-description">
+                    <p>During my time at Tesla, I worked on optimizing critical reliability engineering systems. I enhanced the fatigue analysis algorithm by implementing parallel processing techniques using multiprocessing and multithreading in Python, which eliminated Rainflow cycle counting bottlenecks and achieved a 20-25% improvement in processing speed for large-scale sensor data. I also developed comprehensive analytics solutions using Python libraries like pandas, numpy, and scikit-learn to create statistical analyses and interactive dashboards that visualized vehicle telemetry patterns, enabling more accurate failure prediction and optimized maintenance scheduling. Additionally, I engineered a robust data pipeline leveraging Apache Spark for distributed processing of terabytes of sensor data and Apache Airflow for ETL workflows, which supported real-time reliability metrics calculation. My work on implementing machine learning models for vehicle reliability, including time-series forecasting, anomaly detection, and survival analysis, resulted in a 30% improvement in maintenance prediction accuracy and significantly reduced unplanned downtime.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Apache Spark</span>
+                    <span class="tech-tag">Apache Airflow</span>
+                    <span class="tech-tag">Machine Learning</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">Northeastern University</h3>
+                        <p class="item-subtitle">Data Science & Machine Learning Teaching Assistant</p>
+                    </div>
+                    <span class="item-date">Jan 2024 – Apr 2025</span>
+                </div>
+                <div class="item-description">
+                    <p>As a Teaching Assistant at Northeastern University, I've had the privilege of mentoring over 100 students through their machine learning journey. I guide students through complete ML pipelines, from exploratory data analysis and data preprocessing to advanced feature engineering techniques including scaling, encoding, and PCA. My hands-on support covers a wide range of supervised learning algorithms such as KNN, SVM, various regression techniques, decision trees, and Random Forest, as well as clustering methods like K-Means. I help students achieve 80-90% model accuracies through systematic debugging and optimization strategies. I also facilitate practical learning by assisting with Jupyter notebook exercises that cover critical concepts like cross-validation, hyperparameter tuning, and evaluation metrics including ROC-AUC and precision-recall curves. To improve the overall TA operations, I coordinate with 5 fellow TAs to implement efficient grading workflows and structured office hours, which has improved student support by 30% while maintaining consistent feedback quality.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Teaching</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">Skematix Technologies</h3>
+                        <p class="item-subtitle">Data Scientist – Software Engineer</p>
+                    </div>
+                    <span class="item-date">May 2021 – Jul 2021</span>
+                </div>
+                <div class="item-description">
+                    <p>At Skematix Technologies, I worked on a critical public health analytics project focused on COVID-19 vaccination data. I analyzed over 100,000 COWIN vaccination records using exploratory data analysis and clustering techniques including K-means and DBSCAN to identify regional disparities in vaccine adoption patterns. This analysis provided actionable insights for targeted public health interventions. I built a Random Forest model that predicted vaccination hesitancy based on socioeconomic features such as income, education, and demographics, achieving 85% accuracy with an AUC score of 0.89, which enabled data-driven resource allocation and outreach strategies. To support continuous monitoring, I automated the data pipeline using Python, SQL, and the COWIN API with CI/CD integration through Jenkins and GitHub Actions, reducing manual processing by 40% and ensuring real-time data freshness. I also developed an interactive web dashboard using JavaScript with an SQLite backend and embedded Tableau visualizations to display vaccination KPIs, regional trends, and predictive insights, significantly improving public health transparency and decision-making speed.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">Tableau</span>
+                    <span class="tech-tag">CI/CD</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">PSG Tech – Innovation Practices Lab</h3>
+                        <p class="item-subtitle">Deep Learning/Computer Vision Engineer</p>
+                    </div>
+                    <span class="item-date">Jan 2021 – Jul 2022</span>
+                </div>
+                <div class="item-description">
+                    <p>My work at PSG Tech's Innovation Practices Lab focused on applying deep learning to medical imaging for diabetic retinopathy detection. I co-authored a peer-reviewed research paper titled "Image Classification Using CNN to Diagnose Diabetic Retinopathy" which was published in Springer Nature's Congress on Intelligent Systems (2022). Our model achieved 91% training accuracy and 86% weighted F1-score, outperforming 7 existing state-of-the-art models by up to 40.5%. I developed a ResNet50-based deep learning model for automated diabetic retinopathy detection that could process thousands of fundus images per minute with 88% precision and 86% recall across 5 severity classes (No DR, Mild, Moderate, Severe, and Proliferative). Through comprehensive hyperparameter optimization using grid search across 12 parameter combinations including dropout rates, optimizers, and learning rates, I improved the model performance from an initial 22.6% to 91% accuracy. The final model achieved AUC scores greater than 0.9 for all classification categories and 80% validation accuracy through advanced data augmentation techniques including rescaling, random rotation, and random zoom.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Deep Learning</span>
+                    <span class="tech-tag">Computer Vision</span>
+                    <span class="tech-tag">ResNet50</span>
+                    <span class="tech-tag">Research</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Key Projects</h2>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">AI Text Detoxification System</h3>
+                        <p class="item-subtitle">LLM Fine-tuning, Reinforcement Learning, AI Safety</p>
+                    </div>
+                </div>
+                <div class="item-description">
+                    <p>Fine-tuned FLAN-T5 with LoRA PEFT on AWS SageMaker for dialogue summarization and implemented RLHF/RLAIF with PPO for toxicity reduction, ensuring safe and high-quality AI-generated content for production deployment.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">LLM</span>
+                    <span class="tech-tag">FLAN-T5</span>
+                    <span class="tech-tag">RLHF</span>
+                    <span class="tech-tag">AWS SageMaker</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">Fraud Risk Analytics</h3>
+                        <p class="item-subtitle">Fraud Detection, Model Optimization</p>
+                    </div>
+                </div>
+                <div class="item-description">
+                    <p>Built fraud detection system achieving 93% precision and 35% recall improvement using ensemble methods (XGBoost, LightGBM) with Boruta feature selection, processing imbalanced banking transactions to minimize financial risk exposure.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">XGBoost</span>
+                    <span class="tech-tag">LightGBM</span>
+                    <span class="tech-tag">Feature Selection</span>
+                    <span class="tech-tag">Risk Analytics</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">MLOps Content Classifier</h3>
+                        <p class="item-subtitle">MLOps, Natural Language Processing</p>
+                    </div>
+                </div>
+                <div class="item-description">
+                    <p>Architected production MLOps pipeline achieving 91% accuracy for content classification, leveraging Ray for distributed processing, MLflow for experiment tracking, Ray Serve for scalable inference, and GitHub Actions CI/CD with comprehensive testing across code/data/models.</p>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">MLOps</span>
+                    <span class="tech-tag">Ray</span>
+                    <span class="tech-tag">MLflow</span>
+                    <span class="tech-tag">CI/CD</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateThemeIcon(currentTheme);
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('theme-icon');
+            icon.textContent = theme === 'light' ? '🌙' : '☀️';
+        }
+    </script>
+</body>
+</html>
